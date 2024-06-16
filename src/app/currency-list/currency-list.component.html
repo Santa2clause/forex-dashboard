@@ -1,0 +1,34 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col">
+      <h2 class="text-center">Currency Rates ({{ currencyPairs.length }})</h2>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Symbol</th>
+              <th>Open</th>
+              <th>High</th>
+              <th>Low</th>
+              <th>Close</th>
+              <th>Change</th>
+              <th>Change (%)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let pair of currencyPairs">
+              <td>{{ pair.symbol }}</td>
+              <td>{{ pair.open }}</td>
+              <td>{{ pair.high }}</td>
+              <td>{{ pair.low }}</td>
+              <td>{{ pair.close }}</td>
+              <td>{{ pair.change }}</td>
+              <td>{{ pair.change_percent }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p *ngIf="currencyPairs.length === 0" class="text-center">No currency data available.</p>
+    </div>
+  </div>
+</div>
